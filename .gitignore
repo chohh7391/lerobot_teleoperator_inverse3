@@ -1,0 +1,13 @@
+# Haply proprietary SDK — download separately, see SETUP.md
+/src/lerobot_teleoperator_inverse3/inverse3_bridge/sdk/
+
+# Built C++ bridge binary (produced by `make`)
+/src/lerobot_teleoperator_inverse3/inverse3_bridge/inverse3_server
+
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
