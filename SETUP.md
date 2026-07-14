@@ -6,7 +6,7 @@ This repository ships **only the open bridge/teleop code**. The Haply HardwareAP
 (proprietary static library + headers) is **not** included and must be downloaded
 separately from Haply, then placed and built locally.
 
-> **Using this as a FIRe git submodule?** If you cloned the parent repo without
+> **Using this as a git submodule?** If you cloned the parent repo without
 > `--recurse-submodules`, fetch it first:
 >
 > ```bash
@@ -153,8 +153,7 @@ STATE 0 0 0 0 0 0 1 0 0 0 0 0
 ```
 
 - If you see `OK` (or `OK GRIP_UNAVAILABLE`) and `STATE`, **the device is fine**. If your teleop
-  client (e.g. FIRe's `record.py`) fails after this, the problem is on the Python/ROS side, not
-  the device.
+  client fails after this, the problem is on the client (Python) side, not the device.
 - Seeing `[err] ... timeout waiting for header code` once is normal: on a cold start, the
   Inverse3's first wakeup times out once and then retries. As long as it eventually reaches `OK`,
   there is no problem.
@@ -264,4 +263,4 @@ lsof /dev/ttyACM*
 pgrep -af inverse3_server
 ```
 
-If a previously half-dead `inverse3_server` or `record.py` is holding the port, kill it and re-run.
+If a previously half-dead `inverse3_server` (or the client that launched it) is holding the port, kill it and re-run.
